@@ -1,0 +1,35 @@
+
+const verifyUserName = async (req, res) => {
+  try {
+    console.log("Welcome to verify user");
+    const { username, password } = req.body.data;
+    console.log("USERNAME: ", username, password);
+    const regUser = await User.findOne({ username });
+    console.log(regUser.username);
+    if (regUser) {
+      const matchPassword = await bcrypt.compare(password, regUser.password);
+      console.log("matchpassword", matchPassword);
+      if (matchPassword) {
+        const token = jwt.sign({ username: regUser.username }, secretKey, {
+          expiresIn: "24h",
+        });
+        console.log(token);
+
+        res.cookie("token", token);
+
+        res.status(201).json({
+          msg: "User Login Success",
+          user: regUser.username,
+          profile: regUser.profile,
+        });
+      } else {
+        res.status(401).send({ msg: "Password Incorrect" });
+      }
+    } else {
+      res.status(404).json({ msg: "User name not found" });
+    }
+  } catch (err) {
+    console.log("Error in username vverification");
+    res.status(500).json({ msg: "User is not found please sign up" });
+  }
+};
