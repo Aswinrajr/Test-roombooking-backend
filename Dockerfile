@@ -2,11 +2,10 @@ FROM node:21.6.0
 
 WORKDIR /backend
 
-COPY ..
+COPY . .
 
 RUN npm install
 
-CMD ["node","index.js"]
+CMD ["node", "index.js"]
 
 EXPOSE 1997
-
