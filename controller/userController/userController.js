@@ -364,7 +364,8 @@ const userLogin = async (req, res) => {
       if (user.status == "Active") {
         const matchPassword = await bcrypt.compare(password, user.userPassword);
         if (matchPassword) {
-          const secretKey = process.env.JWT_ADMIN_SECRET_KEY;
+          // const secretKey = process.env.JWT_ADMIN_SECRET_KEY;
+          const secretKey = "ASWINRAJ@ACHU#UHCAJARNIWSA"
 
           const token = jwt.sign(
             { userToken: user.userEmail, role: "user", userId: user._id },
