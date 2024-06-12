@@ -18,15 +18,15 @@ const authMiddleware = (req, res, next) => {
     console.log("Decoded token==>", decoded);
     req.decoded = decoded;
     const { userToken, role } = req.decoded;
-    console.log("userToken, role ", userToken, role);
+    // console.log("userToken, role ", userToken, role);
     if (role === "user" || role === "PG" || role === "Render") {
       next();
     } else {
       return res.status(401).json({ msg: "Unauthorized - Missing token" });
     }
   } catch (err) {
-    console.log("Error", err);
-    res.send("Unothorozed");
+    // console.log("Error==>", err);
+    // res.send("Unothorozed");
     return res.status(401).json({ msg: "Unauthorized - Invalid token" });
   }
 };
