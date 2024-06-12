@@ -38,6 +38,6 @@ jobs:
 
       - name: Run Docker Container
         run: |
-          docker run -d -p 1997:1997 --name nodejs-app-container \
+          docker run -d -p 1997:1997 --name room-booking-app-container \
             -e MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }} \
             ${{ secrets.DOCKER_USERNAME }}/room-booking-app:latest
