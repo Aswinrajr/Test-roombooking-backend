@@ -1,6 +1,6 @@
-FROM node:slim
+FROM node:21.6.0
 
-WORKDIR /
+WORKDIR /backend
 
 COPY ..
 
