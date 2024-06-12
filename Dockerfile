@@ -1,11 +1,14 @@
-FROM node:21.6.0
+FROM node:alpine3.18
 
-WORKDIR /backend
+WORKDIR /app
 
-COPY . .
+COPY package.json ./
 
 RUN npm install
 
-CMD ["node", "index.js"]
+COPY . . 
 
 EXPOSE 1997
+
+CMD ["npm", "start"]
+
