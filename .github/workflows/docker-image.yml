@@ -37,6 +37,11 @@ jobs:
       - name: Pull image from Docker Hub
         run: docker pull ${{ secrets.DOCKER_USERNAME }}/room-booking-app:latest
 
+      - name: Stop and remove old container
+        run: |
+          docker stop room-booking-app || true
+          docker rm room-booking-app || true
+
       - name: Run Docker Container
         run: |
           docker run -d -p 1997:1997 --name room-booking-app \
