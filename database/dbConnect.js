@@ -5,11 +5,7 @@ require("dotenv").config();
 const dbConnect = (req, res) => {
   mongoose
     .connect(
-      // `${process.env.DATABASE_CONNECTION}`,
-     "mongodb+srv://aswinrajr07:yPXdXgF4ThtnerDz@cluster0.xf8fs26.mongodb.net/FindMyHome",
-
-
-
+     `${process.env.DATABASE_CONNECTION}`,
       { useNewUrlParser: true, useUnifiedTopology: true }
     )
     .then(() => {

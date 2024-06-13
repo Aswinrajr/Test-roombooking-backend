@@ -33,5 +33,5 @@ app.use("/",userRoute)
 
 
 app.listen(PORT,()=>{
-    console.log(`server is running on http://localhost:${PORT}`);
+    console.log(`Application is running on port address:${PORT}`);
 });
