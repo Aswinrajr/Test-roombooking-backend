@@ -36,6 +36,9 @@ const adminLogin = async (req, res) => {
   const adminPassword = process.env.ADMIN_PASSWORD;
   const adminMobile = process.env.ADMIN_MOBILE;
 
+  console.log("adminEmail",adminEmail)
+  
+
   const admin = await Admin.findOne();
   console.log("Admin", admin);
   if (!admin) {
