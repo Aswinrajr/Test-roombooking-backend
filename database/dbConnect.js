@@ -4,8 +4,8 @@ require("dotenv").config();
 const dbConnect = () => {
   mongoose
     .connect(process.env.DATABASE_CONNECTION, {
-      serverSelectionTimeoutMS: 30000, // 30 seconds
-      socketTimeoutMS: 45000, // 45 seconds
+      serverSelectionTimeoutMS: 30000, 
+      socketTimeoutMS: 45000, 
     })
     .then(() => {
       console.log("Connected to the database Atlas");
