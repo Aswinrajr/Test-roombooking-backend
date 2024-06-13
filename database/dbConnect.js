@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const dbConnect = () => {
   mongoose
-    .connect(process.env.DATABASE_CONNECTION, {
+    .connect("mongodb+srv://aswinrajr07:yPXdXgF4ThtnerDz@cluster0.xf8fs26.mongodb.net/FindMyHome", {
       serverSelectionTimeoutMS: 30000, 
       socketTimeoutMS: 45000, 
     })
