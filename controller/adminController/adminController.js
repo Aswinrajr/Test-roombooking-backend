@@ -62,6 +62,7 @@ const adminVerifyLogin = async (req, res) => {
   const { email, password } = req.body;
   console.log("Req.body", req.body);
   const admin = await Admin.findOne({ adminEmail: email });
+  const SECRET_KEY = process.env.JWT_ADMIN_SECRET_KEY;
   try {
     console.log(admin);
 
