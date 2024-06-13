@@ -18,7 +18,7 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors({
-    origin: "http://3.27.136.143:5173",
+    origin: "https://www.findmyhomestay.online",
     credentials: true
   }));
 app.disable('x-powered-by');
