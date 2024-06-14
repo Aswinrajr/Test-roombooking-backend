@@ -2,15 +2,17 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const dbConnect = () => {
-  console.log("Welcome to database")
-
-
+  console.log("Welcome to database");
 
   mongoose
-    .connect("mongodb+srv://aswinrajr07:yPXdXgF4ThtnerDz@cluster0.xf8fs26.mongodb.net/FindMyHome", {
-      serverSelectionTimeoutMS: 30000, 
-      socketTimeoutMS: 45000, 
-    })
+    .connect(
+      "mongodb+srv://aswinrajr07:yPXdXgF4ThtnerDz@cluster0.xf8fs26.mongodb.net/FindMyHome",
+
+      {
+        serverSelectionTimeoutMS: 30000,
+        socketTimeoutMS: 45000,
+      }
+    )
     .then(() => {
       console.log("Connected to the database Atlas");
     })
