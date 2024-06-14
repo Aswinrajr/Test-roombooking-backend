@@ -7,11 +7,6 @@ const dbConnect = () => {
   mongoose
     .connect(
       "mongodb+srv://aswinrajr07:yPXdXgF4ThtnerDz@cluster0.xf8fs26.mongodb.net/FindMyHome",
-
-      {
-        serverSelectionTimeoutMS: 30000,
-        socketTimeoutMS: 45000,
-      }
     )
     .then(() => {
       console.log("Connected to the database Atlas");
