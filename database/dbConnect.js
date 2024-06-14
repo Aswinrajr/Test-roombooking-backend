@@ -6,7 +6,7 @@ const dbConnect = () => {
 
   mongoose
     .connect(
-      "mongodb+srv://aswinrajr07:yPXdXgF4ThtnerDz@cluster0.xf8fs26.mongodb.net/FindMyHome",
+      "mongodb+srv://findmyhomeadmin:admin123@cluster0.xf8fs26.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/FindMyHome",
     )
     .then(() => {
       console.log("Connected to the database Atlas");
