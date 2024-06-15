@@ -7,9 +7,6 @@ const dbConnect = () => {
     .connect(
       // "mongodb+srv://aswinrajr07:yPXdXgF4ThtnerDz@cluster0.xf8fs26.mongodb.net/FindMyHome"
           "mongodb+srv://aswinrajr07:BHSHXzU0W4x263Qx@cluster0.xf8fs26.mongodb.net/FindMyHome?retryWrites=true&w=majority&appName=Cluster0"
-
-      
-      
       , {
       serverSelectionTimeoutMS: 30000, 
       socketTimeoutMS: 45000, 
