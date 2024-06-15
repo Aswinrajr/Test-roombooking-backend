@@ -50,18 +50,18 @@ jobs:
       - name: Run Docker Container
         run: |
           docker run -d -p 1997:1997 --name room-booking-app \
-            -e DATABASE_CONNECTION=${{ secrets.DATABASE_CONNECTION }} \
-            -e FAST_TO_SMS_KEY=${{ secrets.FAST_TO_SMS_KEY }} \
-            -e JWT_ADMIN_SECRET_KEY=${{ secrets.JWT_ADMIN_SECRET_KEY }} \
-            -e ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }} \
-            -e ADMIN_EMAIL=${{ secrets.ADMIN_EMAIL }} \
-            -e ADMIN_MOBILE=${{ secrets.ADMIN_MOBILE }} \
-            -e ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }} \
-            -e ADMIN_CPASSWORD=${{ secrets.ADMIN_CPASSWORD }} \
-            -e RAZORPAY_ID=${{ secrets.RAZORPAY_ID }} \
-            -e RAZORPAY_SECRET_ID=${{ secrets.RAZORPAY_SECRET_ID }} \
-            -e CLOUDINARY_CLOUD_NAME=${{ secrets.CLOUDINARY_CLOUD_NAME }} \
-            -e CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }} \
-            -e CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }} \
-            -e EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }} \
-            ${{ secrets.DOCKER_USERNAME }}/room-booking-app:latest
+            -e DATABASE_CONNECTION="${{ secrets.DATABASE_CONNECTION }}" \
+            -e FAST_TO_SMS_KEY="${{ secrets.FAST_TO_SMS_KEY }}" \
+            -e JWT_ADMIN_SECRET_KEY="${{ secrets.JWT_ADMIN_SECRET_KEY }}" \
+            -e ADMIN_USERNAME="${{ secrets.ADMIN_USERNAME }}" \
+            -e ADMIN_EMAIL="${{ secrets.ADMIN_EMAIL }}" \
+            -e ADMIN_MOBILE="${{ secrets.ADMIN_MOBILE }}" \
+            -e ADMIN_PASSWORD="${{ secrets.ADMIN_PASSWORD }}" \
+            -e ADMIN_CPASSWORD="${{ secrets.ADMIN_CPASSWORD }}" \
+            -e RAZORPAY_ID="${{ secrets.RAZORPAY_ID }}" \
+            -e RAZORPAY_SECRET_ID="${{ secrets.RAZORPAY_SECRET_ID }}" \
+            -e CLOUDINARY_CLOUD_NAME="${{ secrets.CLOUDINARY_CLOUD_NAME }}" \
+            -e CLOUDINARY_API_KEY="${{ secrets.CLOUDINARY_API_KEY }}" \
+            -e CLOUDINARY_API_SECRET="${{ secrets.CLOUDINARY_API_SECRET }}" \
+            -e EMAIL_PASSWORD="${{ secrets.EMAIL_PASSWORD }}" \
+            ${{ secrets.DOCKER_USERNAME }}/room-booking-app:latest   
