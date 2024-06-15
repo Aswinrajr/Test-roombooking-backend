@@ -2,14 +2,15 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const dbConnect = () => {
-  console.log("Welcome to database")
+  console.log("Welcome to database");
+  console.log("Attempting to connect to MongoDB with URI:", process.env.DATABASE_CONNECTION);
+  
   mongoose
-    .connect(
-      // "mongodb+srv://aswinrajr07:yPXdXgF4ThtnerDz@cluster0.xf8fs26.mongodb.net/FindMyHome"
-          "mongodb+srv://aswinrajr07:554nvlr8Bwc08DrQ@cluster0.xf8fs26.mongodb.net/FindMyHome?retryWrites=true&w=majority&appName=Cluster0"
-      , {
-      serverSelectionTimeoutMS: 30000, 
-      socketTimeoutMS: 45000, 
+    .connect(process.env.DATABASE_CONNECTION, {
+      serverSelectionTimeoutMS: 30000,
+      socketTimeoutMS: 45000,
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     })
     .then(() => {
       console.log("Connected to the database Atlas");
@@ -17,6 +18,10 @@ const dbConnect = () => {
     .catch((err) => {
       console.error("Error in connecting the database", err);
     });
+
+  mongoose.connection.on('error', (err) => {
+    console.error('Mongoose connection error:', err);
+  });
 };
 
 module.exports = dbConnect;
