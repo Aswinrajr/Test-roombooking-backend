@@ -11,6 +11,8 @@ const providerRoute = require('./route/providerRoute/providerRoute')
 const userRoute = require('./route/userRoute/userRoute')
 const chatRoute= require("./route/chatRoute/chatRoute")
 const dataBase = require('./database/dbConnect')
+const logIp = require("./middleware/logIp")
+app.use(logIp)
 
 dataBase()
 
