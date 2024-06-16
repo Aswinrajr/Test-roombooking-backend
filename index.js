@@ -12,11 +12,11 @@ const userRoute = require('./route/userRoute/userRoute')
 const chatRoute= require("./route/chatRoute/chatRoute")
 const dataBase = require('./database/dbConnect')
 const logIp = require("./middleware/logIp")
+const app = express();
 app.use(logIp)
 
 dataBase()
 
-const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors({
