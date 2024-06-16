@@ -5,8 +5,7 @@ const dbConnect = () => {
   console.log("Welcome to database")
   mongoose
     .connect(
-      // "mongodb+srv://aswinrajr07:yPXdXgF4ThtnerDz@cluster0.xf8fs26.mongodb.net/FindMyHome"
-          "mongodb+srv://aswinrajr07:554nvlr8Bwc08DrQ@cluster0.xf8fs26.mongodb.net/FindMyHome?retryWrites=true&w=majority&appName=Cluster0"
+          "mongodb+srv://aswinrajr07:6ZNOuiYwUjPkYs7N@cluster0.xf8fs26.mongodb.net/FindMyHome"
       , {
       serverSelectionTimeoutMS: 30000, 
       socketTimeoutMS: 45000, 
@@ -18,5 +17,5 @@ const dbConnect = () => {
       console.error("Error in connecting the database", err);
     });
 };
-
+ 
 module.exports = dbConnect;
