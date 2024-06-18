@@ -770,7 +770,7 @@ const bookRoom = async (req, res) => {
 };
 const bookRooms = async (req, res) => {
   try {
-    console.log("Welcome to users booking", req.body);
+    console.log("Welcome to users booking", req.params);
 
     const { formData } = req.body;
     const { userToken, role } = req.decoded;
@@ -783,7 +783,10 @@ const bookRooms = async (req, res) => {
     console.log(checkInDate, checkOutDate);
 
     const roomData = await Rooms.findOne({ _id: id, status: "Available" });
-    const providerData = await Provider.findOne({ _id: roomData.providerId });
+    let providerData = await Provider.findOne({ _id: roomData.providerId })
+    if(!providerData){
+      providerData = await User.findOne({ _id: roomData.providerId});
+    }
     const userData = await User.findOne({ userEmail: userToken });
 
     console.log("Room data", roomData);
@@ -827,7 +830,7 @@ const bookRooms = async (req, res) => {
       checkInDate: checkInDate,
       checkOutDate: checkOutDate,
       amount: amount,
-      image: [...roomData.images, ...providerData.providerImage],
+      image: [...roomData.images],
       totalAmounttoPay: totalAmount,
       city: "Thiruvanathapuram",
     };

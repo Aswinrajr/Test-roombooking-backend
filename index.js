@@ -22,14 +22,11 @@ dataBase();
 app.use(cookieParser());
 app.use(express.json());
 
-const allowedOrigins = [
-  "https://www.findmyhomestay.online",
-  "http://localhost:5173",
-];
+const allowedOrigin = "http://localhost:5173";
 
 const corsOptions = {
   origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
+    if (!origin || origin === allowedOrigin) {
       callback(null, true);
     } else {
       callback(new Error("Not allowed by CORS"));
