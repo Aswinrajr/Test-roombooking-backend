@@ -22,7 +22,7 @@ dataBase();
 app.use(cookieParser());
 app.use(express.json());
 
-const allowedOrigin = "https://test-frontend-roombooking.vercel.app";
+const allowedOrigin = "https://test-frontend-roombooking-wggc.vercel.app";
 
 const corsOptions = {
   origin: function (origin, callback) {
