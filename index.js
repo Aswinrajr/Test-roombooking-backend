@@ -22,7 +22,7 @@ dataBase();
 app.use(cookieParser());
 app.use(express.json());
 
-const allowedOrigin = "www.findmyhomestay.online";
+const allowedOrigin = "https://test-frontend-roombooking.vercel.app";
 
 const corsOptions = {
   origin: function (origin, callback) {
