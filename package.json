@@ -27,6 +27,7 @@
     "qr-image": "^3.2.0",
     "qrcode": "^1.5.3",
     "razorpay": "^2.9.2",
+    "room-booking": "file:",
     "socket.io": "^4.7.5",
     "twilio": "^4.21.0",
     "unirest": "^0.6.0"
