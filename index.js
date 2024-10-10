@@ -22,7 +22,7 @@ dataBase();
 app.use(cookieParser());
 app.use(express.json());
 
-const allowedOrigin = "https://findmyhomestay.online";
+const allowedOrigin = "www.findmyhomestay.online";
 
 const corsOptions = {
   origin: function (origin, callback) {
