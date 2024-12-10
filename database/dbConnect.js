@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
-
+    
 const dbConnect = () => {
   console.log("Welcome to database")
   mongoose
